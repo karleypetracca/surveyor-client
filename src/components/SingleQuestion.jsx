@@ -4,6 +4,7 @@ const SingleQuestion = (props) => {
 	const { detail, passData } = props;
 
 	const [responseObject, setResponseObject] = useState({
+		question_id: detail.question_id,
 		option_1: false,
 		option_2: false,
 		option_3: false,
@@ -19,6 +20,7 @@ const SingleQuestion = (props) => {
 
 	const handleOption1 = () => {
 		setResponseObject({
+			question_id: detail.question_id,
 			option_1: true,
 			option_2: false,
 			option_3: false,
@@ -31,6 +33,7 @@ const SingleQuestion = (props) => {
 
 	const handleOption2 = () => {
 		setResponseObject({
+			question_id: detail.question_id,
 			option_1: false,
 			option_2: true,
 			option_3: false,
@@ -43,6 +46,7 @@ const SingleQuestion = (props) => {
 
 	const handleOption3 = () => {
 		setResponseObject({
+			question_id: detail.question_id,
 			option_1: false,
 			option_2: false,
 			option_3: true,
@@ -55,6 +59,7 @@ const SingleQuestion = (props) => {
 
 	const handleOption4 = () => {
 		setResponseObject({
+			question_id: detail.question_id,
 			option_1: false,
 			option_2: false,
 			option_3: false,
@@ -67,6 +72,7 @@ const SingleQuestion = (props) => {
 
 	const handleOption5 = () => {
 		setResponseObject({
+			question_id: detail.question_id,
 			option_1: false,
 			option_2: false,
 			option_3: false,
@@ -79,6 +85,7 @@ const SingleQuestion = (props) => {
 
 	const handleOption6 = () => {
 		setResponseObject({
+			question_id: detail.question_id,
 			option_1: false,
 			option_2: false,
 			option_3: false,
@@ -91,6 +98,7 @@ const SingleQuestion = (props) => {
 
 	const handleOtherText = (event) => {
 		setResponseObject({
+			question_id: detail.question_id,
 			option_1: false,
 			option_2: false,
 			option_3: false,
