@@ -14,7 +14,7 @@ function App() {
 			<div className="App-main">
 				<Router>
 					<Route path="/" exact component={Home} />
-					<Route path="/survey" exact component={Survey} />
+					<Route path="/survey/:survey_id?" exact component={Survey} />
 				</Router>
 			</div>
 		</div>

@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const SingleQuestion = (props) => {
-	const { detail } = props;
+	const { detail, passData } = props;
 
-	const [questionObject, setQuestionObject] = useState({});
+	const [responseObject, setResponseObject] = useState({
+		option_1: false,
+		option_2: false,
+		option_3: false,
+		option_4: false,
+		option_5: false,
+		option_6: false,
+		other: "",
+	});
+
+	useEffect(() => {
+		passData(detail.question_order - 1, responseObject);
+	}, [responseObject]);
 
 	const handleOption1 = () => {
-		setQuestionObject({
+		setResponseObject({
 			option_1: true,
 			option_2: false,
 			option_3: false,
@@ -18,7 +30,7 @@ const SingleQuestion = (props) => {
 	};
 
 	const handleOption2 = () => {
-		setQuestionObject({
+		setResponseObject({
 			option_1: false,
 			option_2: true,
 			option_3: false,
@@ -30,7 +42,7 @@ const SingleQuestion = (props) => {
 	};
 
 	const handleOption3 = () => {
-		setQuestionObject({
+		setResponseObject({
 			option_1: false,
 			option_2: false,
 			option_3: true,
@@ -42,7 +54,7 @@ const SingleQuestion = (props) => {
 	};
 
 	const handleOption4 = () => {
-		setQuestionObject({
+		setResponseObject({
 			option_1: false,
 			option_2: false,
 			option_3: false,
@@ -54,7 +66,7 @@ const SingleQuestion = (props) => {
 	};
 
 	const handleOption5 = () => {
-		setQuestionObject({
+		setResponseObject({
 			option_1: false,
 			option_2: false,
 			option_3: false,
@@ -66,7 +78,7 @@ const SingleQuestion = (props) => {
 	};
 
 	const handleOption6 = () => {
-		setQuestionObject({
+		setResponseObject({
 			option_1: false,
 			option_2: false,
 			option_3: false,
@@ -78,7 +90,7 @@ const SingleQuestion = (props) => {
 	};
 
 	const handleOtherText = (event) => {
-		setQuestionObject({
+		setResponseObject({
 			option_1: false,
 			option_2: false,
 			option_3: false,
@@ -89,14 +101,8 @@ const SingleQuestion = (props) => {
 		});
 	};
 
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		const response = [];
-		console.log(questionObject);
-	};
-
 	return (
-		<div value={questionObject}>
+		<div>
 			{!!detail.img_url ? <img src={detail.img_url} alt="question" /> : ""}
 			<p>
 				<b>{detail.text}</b>
@@ -156,14 +162,13 @@ const SingleQuestion = (props) => {
 						<input
 							type="text"
 							onChange={handleOtherText}
-							value={questionObject.other}
+							value={responseObject.other}
 						/>
 					</label>
 				) : (
 					""
 				)}
 			</div>
-			<button onClick={handleSubmit}>Submit</button>
 		</div>
 	);
 };

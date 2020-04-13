@@ -8,9 +8,8 @@ const Survey = (props) => {
 
 	useEffect(() => {
 		const getSurvey = async () => {
-			const { post_id } = props.match.params;
-			const id = 492338;
-			const url = `http://localhost:8100/api/survey/summary/${id}`;
+			const { survey_id } = props.match.params;
+			const url = `http://localhost:8100/api/survey/summary/${survey_id}`;
 			const data = await getAPI(url);
 			setSurvey(data);
 		};
