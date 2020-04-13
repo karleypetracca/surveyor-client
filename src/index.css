@@ -1,13 +1,57 @@
+:root {
+	/* colors */
+	--green: rgb(36, 113, 107);
+	--green-light: rgb(95, 151, 147);
+	--yellow: rgb(244, 172, 69);
+	--yellow-light: rgb(247, 194, 119);
+	--blue: rgb(27, 38, 79);
+	--blue-light: rgb(109, 116, 143);
+	--red: rgb(176, 65, 62);
+	--red-light: rgb(190, 99, 97);
+	--red-dark: rgb(145, 54, 51);
+	--grey: rgb(159, 150, 141);
+	--grey-dark: rgb(102, 96, 90);
+	--white: rgb(255, 255, 255);
+	--black: rgb(0, 0, 0);
+	--black-alt: rgb(10, 14, 29);
+
+	/* default sizing */
+	--lg-container: 1000px;
+	--sm-container: 400px;
+	--nav-height: 60px;
+
+	/* color scheme */
+	--primary: var(--yellow);
+	--secondary: var(--green);
+	--tertiary: var(--grey);
+
+	/* fonts */
+	--primary-font: Akronim;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-size: 16px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
 }
