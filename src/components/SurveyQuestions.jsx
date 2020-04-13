@@ -32,16 +32,7 @@ const Survey = (props) => {
 		);
 	});
 
-	return (
-		<div>
-			<form>
-				{questionList}
-				<button type="submit" onClick={handleSubmit}>
-					Submit
-				</button>
-			</form>
-		</div>
-	);
+	return <div>{questionList}</div>;
 };
 
 export default Survey;

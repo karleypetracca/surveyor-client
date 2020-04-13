@@ -15,7 +15,6 @@ const SingleQuestion = (props) => {
 			option_6: false,
 			other: "",
 		});
-		console.log(questionObject);
 	};
 
 	const handleOption2 = () => {
@@ -28,7 +27,6 @@ const SingleQuestion = (props) => {
 			option_6: false,
 			other: "",
 		});
-		console.log(questionObject);
 	};
 
 	const handleOption3 = () => {
@@ -41,7 +39,6 @@ const SingleQuestion = (props) => {
 			option_6: false,
 			other: "",
 		});
-		console.log(questionObject);
 	};
 
 	const handleOption4 = () => {
@@ -54,7 +51,6 @@ const SingleQuestion = (props) => {
 			option_6: false,
 			other: "",
 		});
-		console.log(questionObject);
 	};
 
 	const handleOption5 = () => {
@@ -67,7 +63,6 @@ const SingleQuestion = (props) => {
 			option_6: false,
 			other: "",
 		});
-		console.log(questionObject);
 	};
 
 	const handleOption6 = () => {
@@ -80,7 +75,6 @@ const SingleQuestion = (props) => {
 			option_6: true,
 			other: "",
 		});
-		console.log(questionObject);
 	};
 
 	const handleOtherText = (event) => {
@@ -93,6 +87,11 @@ const SingleQuestion = (props) => {
 			option_6: false,
 			other: event.target.value,
 		});
+	};
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		const response = [];
 		console.log(questionObject);
 	};
 
@@ -164,6 +163,7 @@ const SingleQuestion = (props) => {
 					""
 				)}
 			</div>
+			<button onClick={handleSubmit}>Submit</button>
 		</div>
 	);
 };
