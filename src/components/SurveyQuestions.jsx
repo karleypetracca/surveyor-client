@@ -44,8 +44,6 @@ const Survey = (props) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(response);
-		console.log(props.match.params);
 
 		addResponse();
 		// response.map((element) => {
@@ -57,12 +55,13 @@ const Survey = (props) => {
 	const addResponse = async () => {
 		const url = "http://localhost:8100/api/survey/sendresponse";
 		const response = await postAPI(url, props.match.params);
-		if (response.status === 200) {
-			alert("Response logged!");
-		}
-		if (response.status !== 200) {
-			alert("Response was unable to be logged. Please try again later.");
-		}
+		console.log(response);
+		// if (response.status === 200) {
+		// 	alert("Response logged!");
+		// }
+		// if (response.status !== 200) {
+		// 	alert("Response was unable to be logged. Please try again later.");
+		// }
 	};
 
 	const addResponseQuestions = async (data) => {
