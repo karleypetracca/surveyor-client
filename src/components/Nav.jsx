@@ -7,7 +7,7 @@ const Nav = () => {
 	return (
 		<div className="App-nav">
 			<a href="/">
-				<img src={icon} />
+				<img src={icon} alt="Surveyor logo" />
 				<h1>Surveyor</h1>
 			</a>
 		</div>

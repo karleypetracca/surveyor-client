@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { getAPI } from "../utilities/getAPI";
 
+import SingleQuestion from "./SingleQuestion";
+
 const Survey = (props) => {
 	const [questions, setQuestions] = useState([]);
+	const [response, setResponse] = useState([]);
 
 	useEffect(() => {
 		const getQuestions = async () => {
@@ -16,26 +19,29 @@ const Survey = (props) => {
 		getQuestions();
 	}, [props.match.params]);
 
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		console.log(event.target.value);
+	};
+
 	const questionList = questions.map((question, index) => {
-		return (
-			<div className="question" key={index}>
-				<p>
-					<b>{question.text}</b>
-				</p>
-				<ol>
-					{!!question.option_1 ? <li>{question.option_1}</li> : ""}
-					{!!question.option_2 ? <li>{question.option_2}</li> : ""}
-					{!!question.option_3 ? <li>{question.option_3}</li> : ""}
-					{!!question.option_4 ? <li>{question.option_4}</li> : ""}
-					{!!question.option_5 ? <li>{question.option_5}</li> : ""}
-					{!!question.option_6 ? <li>{question.option_6}</li> : ""}
-					{!!question.other ? <li>{question.other}</li> : ""}
-				</ol>
-			</div>
+		return question.question_type_id === 2 ? (
+			<SingleQuestion detail={question} key={index} />
+		) : (
+			""
 		);
 	});
 
-	return <div>{questionList}</div>;
+	return (
+		<div>
+			<form>
+				{questionList}
+				<button type="submit" onClick={handleSubmit}>
+					Submit
+				</button>
+			</form>
+		</div>
+	);
 };
 
 export default Survey;

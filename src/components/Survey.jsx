@@ -12,7 +12,6 @@ const Survey = (props) => {
 			const id = 492338;
 			const url = `http://localhost:8100/api/survey/summary/${id}`;
 			const data = await getAPI(url);
-			console.log(data);
 			setSurvey(data);
 		};
 
