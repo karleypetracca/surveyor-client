@@ -115,7 +115,7 @@ const SingleQuestion = (props) => {
 			<p>
 				<b>{detail.text}</b>
 			</p>
-			<div>
+			<div className="question">
 				{!!detail.option_1 ? (
 					<label>
 						<input type="radio" name={detail.text} onChange={handleOption1} />

@@ -41,6 +41,14 @@ button {
 	cursor: pointer;
 }
 
+button.red {
+	background-color: var(--red);
+}
+
+button.blue {
+	background-color: var(--blue);
+}
+
 /* temp */
 
 img {
@@ -51,4 +59,15 @@ ol {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	margin-left: 20px;
+}
+
+.question {
+	display: flex;
+	flex-direction: column;
+	margin: 5px;
+}
+
+.question * {
+	margin-left: 5px;
+	margin-right: 5px;
 }

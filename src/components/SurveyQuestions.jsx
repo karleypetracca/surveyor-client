@@ -71,9 +71,6 @@ const Survey = (props) => {
 		};
 
 		const response_id = await addResponse();
-		console.log("Questions: ", questions);
-		console.log("Response: ", response);
-		console.log("ID: ", response_id.response_id);
 		response.map((element) => {
 			addResponseQuestions({
 				response_id: response_id.response_id,

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Nav from "./components/Nav";
 import Home from "./components/Home";
+import CreateSurvey from "./components/CreateSurvey";
 import Survey from "./components/Survey";
 
 import "./App.css";
@@ -14,6 +15,7 @@ function App() {
 			<div className="App-main">
 				<Router>
 					<Route path="/" exact component={Home} />
+					<Route path="/createsurvey" exact component={CreateSurvey} />
 					<Route path="/survey/:survey_id?" exact component={Survey} />
 				</Router>
 			</div>

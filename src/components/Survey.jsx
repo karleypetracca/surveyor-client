@@ -20,7 +20,6 @@ const Survey = (props) => {
 	return (
 		<>
 			<h1>{survey.name}</h1>
-			<h2>Created by: {survey.username}</h2>
 			<SurveyQuestions match={props.match} />
 		</>
 	);
