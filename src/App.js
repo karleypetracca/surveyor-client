@@ -16,7 +16,7 @@ function App() {
 				<Router>
 					<Route path="/" exact component={Home} />
 					<Route path="/createsurvey" exact component={CreateSurvey} />
-					<Route path="/survey/:survey_id?" exact component={Survey} />
+					<Route path="/takesurvey/:survey_id?" exact component={Survey} />
 				</Router>
 			</div>
 		</div>

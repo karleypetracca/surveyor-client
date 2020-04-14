@@ -1,31 +1,55 @@
 import React, { useState } from "react";
+import { postAPI } from "../utilities/postAPI";
 
 import CreateSurveyQuestion from "./CreateSurveyQuestion";
 
 const CreateSurvey = () => {
 	const [questionCount, setQuestionCount] = useState(0);
 	const [questionArray, setQuestionArray] = useState([]);
-	const [RemoveFlag, setRemoveFlag] = useState(false);
 	const [surveyName, setSurveyName] = useState("");
+	const [surveyObject, setSurveyObject] = useState([]);
+
+	const initialQuestionObject = {
+		text: "",
+		question_type_id: 2,
+		question_order: 1,
+		option_1: "",
+		option_2: "",
+		option_3: "",
+		option_4: "",
+		option_5: "",
+		option_6: "",
+		other: "",
+		img_url: "",
+	};
 
 	const changeName = (event) => {
 		setSurveyName(event.target.value);
-		console.log(surveyName);
 	};
 
 	const handleAddQuestion = () => {
-		setRemoveFlag(false);
 		setQuestionCount(questionCount + 1);
 		const renderQuestionsAdd = () => {
 			let questions = questionArray;
-			questions.push(<CreateSurveyQuestion key={questions.length} />);
+			questions.push(
+				<CreateSurveyQuestion
+					key={questionCount}
+					index={questionCount}
+					passData={passData}
+				/>
+			);
 			setQuestionArray(questions);
 		};
 		renderQuestionsAdd();
+		const addSurveyObject = () => {
+			let newSurveyObject = surveyObject;
+			newSurveyObject.push(initialQuestionObject);
+			setSurveyObject(newSurveyObject);
+		};
+		addSurveyObject();
 	};
 
 	const handleRemoveQuestion = () => {
-		setRemoveFlag(true);
 		setQuestionCount(questionCount - 1);
 		const renderQuestionsRemove = () => {
 			let questions = questionArray;
@@ -33,42 +57,58 @@ const CreateSurvey = () => {
 			setQuestionArray(questions);
 		};
 		renderQuestionsRemove();
+		const RemoveSurveyObject = () => {
+			let newSurveyObject = surveyObject;
+			newSurveyObject.pop();
+			setSurveyObject(newSurveyObject);
+		};
+		RemoveSurveyObject();
 	};
 
-	const handleSubmit = (event) => {
+	const passData = async (index, data) => {
+		const newArray = await surveyObject;
+		newArray.splice(index, 1, data);
+		setSurveyObject(newArray);
+	};
+
+	const handleSubmit = async (event) => {
 		event.preventDefault();
 
-		// const addSurvey = async () => {
-		// 	const url = "http://localhost:8100/api/survey/addsurvey";
-		// 	const response = await postAPI(url, props.match.params);
+		const addSurvey = async () => {
+			const url = "http://localhost:8100/api/survey/addsurvey";
+			const data = {
+				name: surveyName,
+				survey_type_id: "2",
+				user_id: "0",
+			};
+			const response = await postAPI(url, data);
+			console.log(data);
+			if (response.status !== 200) {
+				alert("Response was unable to be logged. Please try again later.");
+			}
+			return await response.json();
+		};
 
-		// 	if (response.status !== 200) {
-		// 		alert("Response was unable to be logged. Please try again later.");
-		// 	}
-		// 	return await response.json();
-		// };
+		const addSurveyQuestions = async (data) => {
+			const url = "http://localhost:8100/api/survey/addsurveyquestions";
+			const response = await postAPI(url, data);
+			if (response.status === 200) {
+				alert("Response logged!");
+			}
+			if (response.status !== 200) {
+				alert("Response was unable to be logged. Please try again later.");
+			}
+		};
 
-		// const addSurveyQuestions = async (data) => {
-		// 	const url = "http://localhost:8100/api/survey/addsurveyquestions";
-		// 	const response = await postAPI(url, data);
-		// 	if (response.status === 200) {
-		// 		alert("Response logged!");
-		// 	}
-		// 	if (response.status !== 200) {
-		// 		alert("Response was unable to be logged. Please try again later.");
-		// 	}
-		// };
-
-		// const response_id = await addSurvey();
-		// console.log("Questions: ", questions);
-		// console.log("Response: ", response);
-		// console.log("ID: ", response_id.response_id);
-		// response.map((element) => {
-		// 	addSurveyQuestions({
-		// 		response_id: response_id.response_id,
-		// 		...element,
-		// 	});
-		// });
+		const survey_id = await addSurvey();
+		console.log("Survey: ", surveyObject);
+		console.log("ID: ", survey_id.survey_id);
+		surveyObject.map((element) => {
+			addSurveyQuestions({
+				survey_id: survey_id.survey_id,
+				...element,
+			});
+		});
 	};
 
 	return (
