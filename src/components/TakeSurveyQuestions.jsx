@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { getAPI } from "../utilities/getAPI";
 import { postAPI } from "../utilities/postAPI";
 
@@ -7,6 +8,7 @@ import TakeSurveySingleQuestion from "./TakeSurveySingleQuestion";
 const Survey = (props) => {
 	const [questions, setQuestions] = useState([]);
 	const [response, setResponse] = useState([]);
+	const history = useHistory();
 
 	// set up for initial page
 	useEffect(() => {
@@ -63,7 +65,7 @@ const Survey = (props) => {
 			const url = "http://localhost:8100/api/survey/sendresponsequestions";
 			const response = await postAPI(url, data);
 			if (response.status === 200) {
-				alert("Response logged!");
+				history.push("/");
 			}
 			if (response.status !== 200) {
 				alert("Response was unable to be logged. Please try again later.");
@@ -93,10 +95,12 @@ const Survey = (props) => {
 	});
 
 	return (
-		<div>
+		<>
 			{questionList}
-			<button onClick={handleSubmit}>Submit</button>
-		</div>
+			<button className="submit" onClick={handleSubmit}>
+				Submit
+			</button>
+		</>
 	);
 };
 

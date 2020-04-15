@@ -31,9 +31,9 @@ const Home = () => {
 		<HomeStyled>
 			<HeroStyled>
 				<h1>Welcome to Surveyor</h1>
-				<h2>Make a survey, no logins or signup forms. It's that simple.</h2>
+				<h2>Make a survey. No logins or signup forms. It's that simple.</h2>
 				<a href="/createsurvey">
-					<button>Create a SnapSurvey</button>
+					<button className="green">Create a SnapSurvey</button>
 				</a>
 			</HeroStyled>
 			<p>

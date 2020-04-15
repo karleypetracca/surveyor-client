@@ -1,6 +1,14 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { postAPI } from "../utilities/postAPI";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+	faAngleDoubleRight,
+	faAngleDoubleLeft,
+} from "@fortawesome/free-solid-svg-icons";
+
+import RequiredText from "./RequiredText";
 import CreateSurveySingleQuestion from "./CreateSurveySingleQuestion";
 
 import styled from "styled-components";
@@ -11,6 +19,45 @@ const CreateSurveyStyled = styled.div`
 	align-items: center;
 	min-height: 90vh;
 	text-align: center;
+
+	.buttons {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.buttons * {
+		margin: 20px 5px;
+	}
+
+	.submit {
+		margin: 30px 0;
+	}
+
+	.arrows {
+		margin: 0 5px;
+		color: var(--secondary);
+	}
+
+	.question {
+		box-shadow: 2px 8px 8px 2px var(--grey-light);
+		border-radius: 4px;
+		padding: 20px 5px;
+		margin: 20px 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.question .header {
+		font-weight: bold;
+		text-align: left;
+		padding-left: 5px;
+		color: var(--secondary);
+	}
+
+	.question .small-text {
+		font-size: 12px;
+	}
 `;
 
 const CreateSurvey = () => {
@@ -18,6 +65,7 @@ const CreateSurvey = () => {
 	const [questionArray, setQuestionArray] = useState([]);
 	const [surveyName, setSurveyName] = useState("");
 	const [surveyObject, setSurveyObject] = useState([]);
+	const history = useHistory();
 
 	const initialQuestionObject = {
 		text: "",
@@ -46,6 +94,7 @@ const CreateSurvey = () => {
 					key={questionCount}
 					index={questionCount}
 					passData={passData}
+					className="question"
 				/>
 			);
 			setQuestionArray(questions);
@@ -103,7 +152,7 @@ const CreateSurvey = () => {
 			const url = "http://localhost:8100/api/survey/addsurveyquestions";
 			const response = await postAPI(url, data);
 			if (response.status === 200) {
-				alert("Response logged!");
+				history.push("/");
 			}
 			if (response.status !== 200) {
 				alert("Response was unable to be logged. Please try again later.");
@@ -128,19 +177,30 @@ const CreateSurvey = () => {
 				What should your survey be called?
 				<input
 					type="text"
+					required
 					placeholder="Insert survey name"
 					value={surveyName}
 					onChange={changeName}
+					className="center"
 				/>
+				<RequiredText />
 			</label>
-			<button onClick={handleAddQuestion}>Add Question</button>
-			{questionArray.map((element) => element)}
-			<button className="red" onClick={handleRemoveQuestion}>
-				Remove Last Question
-			</button>
-			<button className="blue" onClick={handleSubmit}>
-				Click to Submit Survey
-			</button>
+			<div className="questions">{questionArray.map((element) => element)}</div>
+			<div className="buttons">
+				<button className="green" onClick={handleAddQuestion}>
+					Add Question
+				</button>
+				<button className="red" onClick={handleRemoveQuestion}>
+					Remove Last
+				</button>
+			</div>
+			<div>
+				<FontAwesomeIcon icon={faAngleDoubleRight} className="arrows" />
+				<button className="blue submit" onClick={handleSubmit}>
+					Click to Submit Survey
+				</button>
+				<FontAwesomeIcon icon={faAngleDoubleLeft} className="arrows" />
+			</div>
 		</CreateSurveyStyled>
 	);
 };

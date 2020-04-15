@@ -16,6 +16,8 @@ const AppStyled = styled.div`
 		min-height: 90vh;
 		margin: 0 auto;
 		padding: 10px;
+		width: 100%;
+		max-width: var(--lg-container);
 	}
 `;
 

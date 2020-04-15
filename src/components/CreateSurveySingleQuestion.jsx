@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import RequiredText from "./RequiredText";
+
 const CreateSurveyQuestion = (props) => {
 	const { index, passData } = props;
 
@@ -14,7 +16,7 @@ const CreateSurveyQuestion = (props) => {
 		option_4: "",
 		option_5: "",
 		option_6: "",
-		other: "",
+		other: false,
 		img_url: "",
 	});
 
@@ -27,6 +29,7 @@ const CreateSurveyQuestion = (props) => {
 	const [option4, setOption4] = useState("");
 	const [option5, setOption5] = useState("");
 	const [option6, setOption6] = useState("");
+	const [other, setOther] = useState(false);
 	const [imgUrl, setImgUrl] = useState("");
 
 	// setting individual field handlers
@@ -70,6 +73,11 @@ const CreateSurveyQuestion = (props) => {
 		changeQuestion();
 	};
 
+	const handleOther = (event) => {
+		setOther(event.target.value);
+		changeQuestion();
+	};
+
 	const handleImgUrl = (event) => {
 		setImgUrl(event.target.value);
 		changeQuestion();
@@ -86,7 +94,7 @@ const CreateSurveyQuestion = (props) => {
 			option_4: option4,
 			option_5: option5,
 			option_6: option6,
-			other: "",
+			other: other,
 			img_url: imgUrl,
 		});
 	};
@@ -97,26 +105,30 @@ const CreateSurveyQuestion = (props) => {
 
 	return (
 		<div className="question">
+			<p className="header">Question #{index + 1}</p>
 			<label>
 				Question text:
 				<input
 					type="text"
-					placeholder="Insert text here"
+					placeholder="Ex: What's your favorite color?"
 					value={text}
 					onChange={handleText}
+					className="center"
+					required
 				/>
+				<RequiredText />
 			</label>
 			<label>
 				Question type:
 				<select defaultValue="2">
-					<option value="1">Boolean (True/False) [1]</option>
-					<option value="2">Single-choice [2]</option>
-					<option value="3">Multiple-choice [3]</option>
-					<option value="4">Open Text [4]</option>
+					<option value="1">Boolean (True/False)</option>
+					<option value="2">Single-choice</option>
+					<option value="3">Multiple-choice</option>
+					<option value="4">Open Text</option>
 				</select>
 			</label>
 			<label>
-				Option 1
+				Option 1:
 				<input
 					type="text"
 					placeholder="Insert option 1 text"
@@ -124,7 +136,7 @@ const CreateSurveyQuestion = (props) => {
 				/>
 			</label>
 			<label>
-				Option 2
+				Option 2:
 				<input
 					type="text"
 					placeholder="Insert option 2 text"
@@ -132,7 +144,7 @@ const CreateSurveyQuestion = (props) => {
 				/>
 			</label>
 			<label>
-				Option 3
+				Option 3:
 				<input
 					type="text"
 					placeholder="Insert option 3 text"
@@ -140,7 +152,7 @@ const CreateSurveyQuestion = (props) => {
 				/>
 			</label>
 			<label>
-				Option 4
+				Option 4:
 				<input
 					type="text"
 					placeholder="Insert option 4 text"
@@ -148,7 +160,7 @@ const CreateSurveyQuestion = (props) => {
 				/>
 			</label>
 			<label>
-				Option 5
+				Option 5:
 				<input
 					type="text"
 					placeholder="Insert option 5 text"
@@ -156,7 +168,7 @@ const CreateSurveyQuestion = (props) => {
 				/>
 			</label>
 			<label>
-				Option 6
+				Option 6:
 				<input
 					type="text"
 					placeholder="Insert option 6 text"
@@ -164,12 +176,29 @@ const CreateSurveyQuestion = (props) => {
 				/>
 			</label>
 			<label>
-				Add an image? (please enter URL):
+				Would you like to include an other field?
+				<select
+					type="text"
+					placeholder="Insert option 6 text"
+					onChange={handleOther}
+					defaultValue="false"
+				>
+					<option value="true">Yes</option>
+					<option value="false">No</option>
+				</select>
+			</label>
+			<label>
+				If you would like to add an image to this question, please enter image
+				URL:
 				<input
 					type="text"
 					placeholder="Insert image url"
 					onChange={handleImgUrl}
 				/>
+				{imgUrl === "" ? "" : <img src={imgUrl} alt="question header" />}
+				<p className="small-text">
+					Note: Image will be placed above the question text.
+				</p>
 			</label>
 		</div>
 	);

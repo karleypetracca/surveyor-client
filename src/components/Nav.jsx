@@ -6,7 +6,7 @@ import styled from "styled-components";
 const NavStyled = styled.div`
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	background-color: var(--primary);
 	min-height: var(--nav - height);
 	color: var(--white);
@@ -23,6 +23,14 @@ const NavStyled = styled.div`
 
 	img {
 		height: 60px;
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		max-width: var(--lg-container);
 	}
 
 	.left {
@@ -50,20 +58,22 @@ const NavStyled = styled.div`
 const Nav = () => {
 	return (
 		<NavStyled>
-			<div className="left">
-				<a href="/">
-					<img src={icon} alt="Surveyor logo" />
-					<p className="no-mobile">Surveyor</p>
-				</a>
-			</div>
-			<div className="right">
-				<a href="/createsurvey">
-					<p>Create Survey</p>
-				</a>
-				<a href="/about">
-					<p>About</p>
-				</a>
-			</div>
+			<nav>
+				<div className="left">
+					<a href="/">
+						<img src={icon} alt="Surveyor logo" />
+						<p className="no-mobile">Surveyor</p>
+					</a>
+				</div>
+				<div className="right">
+					<a href="/createsurvey">
+						<p>Create Survey</p>
+					</a>
+					<a href="/about">
+						<p>About</p>
+					</a>
+				</div>
+			</nav>
 		</NavStyled>
 	);
 };

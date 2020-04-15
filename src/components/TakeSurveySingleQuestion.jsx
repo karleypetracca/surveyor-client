@@ -113,12 +113,16 @@ const SingleQuestion = (props) => {
 	};
 
 	return (
-		<div>
-			{!!detail.img_url ? <img src={detail.img_url} alt="question" /> : ""}
-			<p>
+		<div className="question">
+			{!!detail.img_url ? (
+				<img src={detail.img_url} alt="question header" />
+			) : (
+				""
+			)}
+			<p className="header">
 				<b>{detail.text}</b>
 			</p>
-			<div className="question">
+			<div className="options">
 				{!!detail.option_1 ? (
 					<label>
 						<input
