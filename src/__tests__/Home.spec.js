@@ -1,8 +1,8 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
-import SingleQuestion from "../components/TakeSurveySingleQuestion";
+import Home from "../components/Home";
 
-describe("<SingleQuestion/>", () => {
+describe("<Home/>", () => {
 	let getByTestId;
 
 	afterEach(cleanup);
@@ -12,7 +12,7 @@ describe("<SingleQuestion/>", () => {
 
 		beforeEach(() => {
 			changeHandler = jest.fn();
-			({ getByTestId } = render(<SingleQuestion />));
+			({ getByTestId } = render(<Home />));
 
 			fireEvent.click(getByTestId("radio1"));
 		});

@@ -1,16 +1,70 @@
 import React from "react";
-import icon from "../android-chrome-512x512.png";
+import icon from "../android-chrome-512x512-nav-icon2.png";
 
-import "../App.css";
+import styled from "styled-components";
+
+const NavStyled = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--primary);
+	min-height: var(--nav - height);
+	color: var(--white);
+	font-size: 24px;
+	box-shadow: 0 0 4px var(--grey);
+	position: sticky;
+	top: 0;
+
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	img {
+		height: 60px;
+	}
+
+	.left {
+		margin: 0 5px;
+		font-weight: bold;
+	}
+
+	.right {
+		margin: 0 5px;
+		display: flex;
+		align-items: center;
+	}
+
+	.right * {
+		margin: 0 5px;
+	}
+
+	@media only screen and (max-width: 600px) {
+		.no-mobile {
+			display: none;
+		}
+	}
+`;
 
 const Nav = () => {
 	return (
-		<div className="App-nav">
-			<a href="/">
-				<img src={icon} alt="Surveyor logo" />
-				<h1>Surveyor</h1>
-			</a>
-		</div>
+		<NavStyled>
+			<div className="left">
+				<a href="/">
+					<img src={icon} alt="Surveyor logo" />
+					<p className="no-mobile">Surveyor</p>
+				</a>
+			</div>
+			<div className="right">
+				<a href="/createsurvey">
+					<p>Create Survey</p>
+				</a>
+				<a href="/about">
+					<p>About</p>
+				</a>
+			</div>
+		</NavStyled>
 	);
 };
 

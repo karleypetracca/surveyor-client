@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getAPI } from "../utilities/getAPI";
 
-import SurveyQuestions from "./SurveyQuestions";
+import TakeSurveyQuestions from "./TakeSurveyQuestions";
 
 const Survey = (props) => {
 	const [survey, setSurvey] = useState({});
@@ -20,7 +20,7 @@ const Survey = (props) => {
 	return (
 		<>
 			<h1>{survey.name}</h1>
-			<SurveyQuestions match={props.match} />
+			<TakeSurveyQuestions match={props.match} />
 		</>
 	);
 };

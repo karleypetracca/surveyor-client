@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { postAPI } from "../utilities/postAPI";
 
-import CreateSurveyQuestion from "./CreateSurveyQuestion";
+import CreateSurveySingleQuestion from "./CreateSurveySingleQuestion";
 
 const CreateSurvey = () => {
 	const [questionCount, setQuestionCount] = useState(0);
@@ -32,7 +32,7 @@ const CreateSurvey = () => {
 		const renderQuestionsAdd = () => {
 			let questions = questionArray;
 			questions.push(
-				<CreateSurveyQuestion
+				<CreateSurveySingleQuestion
 					key={questionCount}
 					index={questionCount}
 					passData={passData}

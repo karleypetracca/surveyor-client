@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getAPI } from "../utilities/getAPI";
 import { postAPI } from "../utilities/postAPI";
 
-import SingleQuestion from "./SingleQuestion";
+import TakeSurveySingleQuestion from "./TakeSurveySingleQuestion";
 
 const Survey = (props) => {
 	const [questions, setQuestions] = useState([]);
@@ -82,7 +82,11 @@ const Survey = (props) => {
 	// children mapping based on questions in survey
 	const questionList = questions.map((question, index) => {
 		return question.question_type_id === 2 ? (
-			<SingleQuestion detail={question} key={index} passData={passData} />
+			<TakeSurveySingleQuestion
+				detail={question}
+				key={index}
+				passData={passData}
+			/>
 		) : (
 			""
 		);
