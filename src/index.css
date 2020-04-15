@@ -80,6 +80,10 @@ button.grey {
 	background-color: var(--grey-dark);
 }
 
+h1 {
+	font-size: 30px;
+}
+
 /* temp */
 
 img {

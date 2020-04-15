@@ -3,6 +3,16 @@ import { postAPI } from "../utilities/postAPI";
 
 import CreateSurveySingleQuestion from "./CreateSurveySingleQuestion";
 
+import styled from "styled-components";
+
+const CreateSurveyStyled = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 90vh;
+	text-align: center;
+`;
+
 const CreateSurvey = () => {
 	const [questionCount, setQuestionCount] = useState(0);
 	const [questionArray, setQuestionArray] = useState([]);
@@ -112,7 +122,7 @@ const CreateSurvey = () => {
 	};
 
 	return (
-		<>
+		<CreateSurveyStyled>
 			<h1>Create a new survey</h1>
 			<label>
 				What should your survey be called?
@@ -131,7 +141,7 @@ const CreateSurvey = () => {
 			<button className="blue" onClick={handleSubmit}>
 				Click to Submit Survey
 			</button>
-		</>
+		</CreateSurveyStyled>
 	);
 };
 
