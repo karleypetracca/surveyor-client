@@ -39,7 +39,7 @@ const Home = () => {
 			<p>
 				Want to see an example first? Check out our sample SnapSurvey below:
 			</p>
-			<a href="/survey/492338">
+			<a href="/takesurvey/492338">
 				<button className="blue">View Sample</button>
 			</a>
 		</HomeStyled>
