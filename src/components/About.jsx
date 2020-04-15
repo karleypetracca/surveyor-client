@@ -54,18 +54,22 @@ const About = () => {
 				</p>
 				<div className="buttons">
 					<a href="https://github.com/karleypetracca/surveyor-client">
-						<button className="green">Front End Client</button>
+						<button className="green">Frontend Client</button>
 					</a>
 					<a href="https://github.com/karleypetracca/surveyor-api">
-						<button className="green">Back End API</button>
+						<button className="grey">Backend API</button>
 					</a>
 				</div>
 			</HeroStyled>
 			<HeroStyled>
-				<h2>About the author:</h2>
+				<h2>More on the author:</h2>
 
 				<img src="https://avatars2.githubusercontent.com/u/39736230?s=460&u=4782f77b8eb8704e299b05cc48c8847fcb51d06b&v=4" />
+				<h3>Karley Petracca</h3>
 				<div className="buttons">
+					<a href="https://www.karleypetracca.com">
+						<button className="blue">Portfolio</button>
+					</a>
 					<a href="https://github.com/karleypetracca">
 						<button className="blue">GitHub</button>
 					</a>

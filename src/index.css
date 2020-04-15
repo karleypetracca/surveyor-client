@@ -84,6 +84,7 @@ button.grey {
 
 img {
 	max-height: 100px;
+	border-radius: 4px;
 }
 
 ol {
