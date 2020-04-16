@@ -10,7 +10,7 @@ const TakeSurveyStyled = styled.div`
 	flex-direction: column;
 	align-items: center;
 	min-height: 90vh;
-	text-align: left;
+	text-align: center;
 
 	.question {
 		box-shadow: 2px 8px 8px 2px var(--grey-light);
@@ -20,6 +20,7 @@ const TakeSurveyStyled = styled.div`
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		text-align: left;
 		margin: 20px 0;
 		width: 100%;
 	}
@@ -61,7 +62,7 @@ const Survey = (props) => {
 	useEffect(() => {
 		const getSurvey = async () => {
 			const { survey_id } = props.match.params;
-			const url = `http://localhost:8100/api/survey/summary/${survey_id}`;
+			const url = `https://surveyor-api.karleypetracca.com/api/survey/summary/${survey_id}`;
 			const data = await getAPI(url);
 			setSurvey(data);
 		};

@@ -134,7 +134,8 @@ const CreateSurvey = () => {
 		event.preventDefault();
 
 		const addSurvey = async () => {
-			const url = "http://localhost:8100/api/survey/addsurvey";
+			const url =
+				"https://surveyor-api.karleypetracca.com/api/survey/addsurvey";
 			const data = {
 				name: surveyName,
 				survey_type_id: "2",
@@ -148,7 +149,8 @@ const CreateSurvey = () => {
 		};
 
 		const addSurveyQuestions = async (data) => {
-			const url = "http://localhost:8100/api/survey/addsurveyquestions";
+			const url =
+				"http://surveyor-api.karleypetracca.com/api/survey/addsurveyquestions";
 			const response = await postAPI(url, data);
 			if (response.status === 200) {
 				history.push(`/createsurvey/complete/${survey_id.survey_id}`);

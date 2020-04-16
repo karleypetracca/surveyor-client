@@ -79,9 +79,9 @@ const CreateSurveyComplete = (props) => {
 
 	useEffect(() => {
 		const { survey_id } = props.match.params;
-		const survey = `http://localhost:3000/takesurvey/${survey_id}`;
+		const survey = `https://surveyor-api.karleypetracca.com/takesurvey/${survey_id}`;
 		setSurveyLink(survey);
-		const dashboard = `http://localhost:3000/dashboard/${survey_id}`;
+		const dashboard = `https://surveyor-api.karleypetracca.com/dashboard/${survey_id}`;
 		setDashboardLink(dashboard);
 	}, [props.match.params]);
 

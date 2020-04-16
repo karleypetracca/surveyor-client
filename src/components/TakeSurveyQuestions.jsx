@@ -31,7 +31,7 @@ const Survey = (props) => {
 
 		const getQuestions = async () => {
 			const { survey_id } = props.match.params;
-			const url = `http://localhost:8100/api/survey/detail/${survey_id}`;
+			const url = `https://surveyor-api.karleypetracca.com/api/survey/detail/${survey_id}`;
 			const data = await getAPI(url);
 			setQuestions(data);
 			setResponse(initialResponse(data));
@@ -52,7 +52,8 @@ const Survey = (props) => {
 		event.preventDefault();
 
 		const addResponse = async () => {
-			const url = "http://localhost:8100/api/survey/sendresponse";
+			const url =
+				"https://surveyor-api.karleypetracca.com/api/survey/sendresponse";
 			const response = await postAPI(url, props.match.params);
 
 			if (response.status !== 200) {
@@ -62,7 +63,8 @@ const Survey = (props) => {
 		};
 
 		const addResponseQuestions = async (data) => {
-			const url = "http://localhost:8100/api/survey/sendresponsequestions";
+			const url =
+				"https://surveyor-api.karleypetracca.com/api/survey/sendresponsequestions";
 			const response = await postAPI(url, data);
 			if (response.status === 200) {
 				history.push("/");
