@@ -34,7 +34,7 @@ const TakeSurveyStyled = styled.div`
 	img {
 		max-height: 150px;
 		border-radius: 4px;
-		padding: 5px 10px;
+		margin: 5px 10px;
 	}
 
 	.options {

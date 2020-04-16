@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { getAPI } from "../utilities/getAPI";
 
+import DashboardQuestion from "./DashboardQuestion";
+
 import styled from "styled-components";
 
 const DashboardStyled = styled.div`
@@ -30,6 +32,17 @@ const DashboardStyled = styled.div`
 		color: var(--secondary);
 	}
 
+	.question .id {
+		font-weight: bold;
+		color: var(--green);
+		margin: 5px 0;
+		margin-top: 20px;
+	}
+
+	.question .id button {
+		background-color: var(--green);
+	}
+
 	li {
 		margin-left: 30px;
 	}
@@ -40,7 +53,6 @@ const Dashboard = (props) => {
 	const [surveyName, setSurveyName] = useState("");
 	const [surveyDetail, setSurveyDetail] = useState([]);
 	const [surveyCount, setSurveyCount] = useState(0);
-	const [surveyResponses, setSurveyResponses] = useState([]);
 
 	useEffect(() => {
 		const getSurveyDetail = async () => {
@@ -58,33 +70,18 @@ const Dashboard = (props) => {
 			setSurveyCount(data.count);
 		};
 
-		const getSurveyResponses = async () => {
-			const { survey_id } = props.match.params;
-			const url = `https://surveyor-api.karleypetracca.com/api/survey/responses/all/${survey_id}`;
-			const data = await getAPI(url);
-			setSurveyResponses(data);
-		};
-
 		getSurveyDetail();
 		getSurveyCount();
-		// getSurveyResponses();
 	}, [props.match.params]);
 
 	const questions = surveyDetail.map((question, index) => {
 		return (
-			<div key={index} className="question">
-				<p className="header">{question.text}</p>
-				<ol>
-					{!!question.option_1 ? <li>{question.option_1}</li> : ""}
-					{!!question.option_2 ? <li>{question.option_2}</li> : ""}
-					{!!question.option_3 ? <li>{question.option_3}</li> : ""}
-					{!!question.option_4 ? <li>{question.option_4}</li> : ""}
-					{!!question.option_5 ? <li>{question.option_5}</li> : ""}
-					{!!question.option_6 ? <li>{question.option_6}</li> : ""}
-					{!!question.other ? <li>{question.other}</li> : ""}
-				</ol>
-				<p className="">Question ID: #{question.question_id}</p>
-			</div>
+			<DashboardQuestion
+				key={index}
+				question={question}
+				match={props.match}
+				surveyCount={surveyCount}
+			/>
 		);
 	});
 
