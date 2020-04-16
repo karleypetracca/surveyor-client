@@ -23,18 +23,19 @@ const TakeSurveyStyled = styled.div`
 		text-align: left;
 		margin: 20px 0;
 		width: 100%;
+		max-width: var(--sm-container);
 	}
 
 	.question .header {
 		font-weight: bold;
 		padding: 5px 10px;
-		color: var(--black-alt);
 	}
 
 	img {
 		max-height: 150px;
 		border-radius: 4px;
 		margin: 5px 10px;
+		align-self: center;
 	}
 
 	.options {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getAPI } from "../utilities/getAPI";
 
-import Modal from "./Modal";
+import DashboardModal from "./DashboardModal";
 
 const DashboardQuestion = (props) => {
 	const { question, surveyCount } = props;
@@ -57,7 +57,7 @@ const DashboardQuestion = (props) => {
 				Question ID:
 				<button onClick={modalHandler}>#{question.question_id}</button>
 			</p>
-			<Modal
+			<DashboardModal
 				showModal={showModal}
 				setShowModal={setShowModal}
 				detail={question}

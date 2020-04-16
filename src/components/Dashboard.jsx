@@ -19,8 +19,8 @@ const DashboardStyled = styled.div`
 		padding-bottom: 5px;
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
-		text-align: left;
+		align-items: center;
+		text-align: center;
 		margin: 20px 0;
 		width: 100%;
 		padding-left: 5px;
@@ -28,8 +28,6 @@ const DashboardStyled = styled.div`
 
 	.question .header {
 		font-weight: bold;
-		text-align: left;
-		color: var(--secondary);
 	}
 
 	.question .id {

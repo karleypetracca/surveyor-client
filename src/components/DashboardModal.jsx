@@ -2,9 +2,9 @@ import React, { useRef } from "react";
 
 import styled from "styled-components";
 
-const ModalStyled = styled.div`
+const DashboardModalStyled = styled.div`
 	position: fixed;
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: rgba(0, 0, 0, 0.7);
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -16,7 +16,6 @@ const ModalStyled = styled.div`
 	transition: all 0.3s;
 
 	.container {
-		box-shadow: 2px 8px 8px 2px var(--grey-light);
 		border-radius: 4px;
 		padding: 5px;
 		position: absolute;
@@ -52,7 +51,7 @@ const ModalStyled = styled.div`
 	}
 `;
 
-const Modal = (props) => {
+const DashboardModal = (props) => {
 	const modal = useRef(null);
 	const { showModal, setShowModal, detail, surveyCount, aggResponses } = props;
 
@@ -71,7 +70,7 @@ const Modal = (props) => {
 	return (
 		<>
 			{!!showModal ? (
-				<ModalStyled onClick={handleClick}>
+				<DashboardModalStyled onClick={handleClick}>
 					<div className="container" ref={modal}>
 						{!!detail.img_url ? (
 							<img src={detail.img_url} alt={detail.text} />
@@ -149,7 +148,7 @@ const Modal = (props) => {
 							Close
 						</button>
 					</div>
-				</ModalStyled>
+				</DashboardModalStyled>
 			) : (
 				""
 			)}
@@ -157,4 +156,4 @@ const Modal = (props) => {
 	);
 };
 
-export default Modal;
+export default DashboardModal;

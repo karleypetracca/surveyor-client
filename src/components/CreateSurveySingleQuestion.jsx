@@ -120,7 +120,7 @@ const CreateSurveyQuestion = (props) => {
 					<option value="4">Open Text</option>
 				</select>
 			</label>
-			<label>
+			<label className="option">
 				Option 1:
 				<input
 					type="text"
@@ -128,7 +128,7 @@ const CreateSurveyQuestion = (props) => {
 					onChange={handleOption1}
 				/>
 			</label>
-			<label>
+			<label className="option">
 				Option 2:
 				<input
 					type="text"
@@ -136,7 +136,7 @@ const CreateSurveyQuestion = (props) => {
 					onChange={handleOption2}
 				/>
 			</label>
-			<label>
+			<label className="option">
 				Option 3:
 				<input
 					type="text"
@@ -144,7 +144,7 @@ const CreateSurveyQuestion = (props) => {
 					onChange={handleOption3}
 				/>
 			</label>
-			<label>
+			<label className="option">
 				Option 4:
 				<input
 					type="text"
@@ -152,7 +152,7 @@ const CreateSurveyQuestion = (props) => {
 					onChange={handleOption4}
 				/>
 			</label>
-			<label>
+			<label className="option">
 				Option 5:
 				<input
 					type="text"
@@ -160,7 +160,7 @@ const CreateSurveyQuestion = (props) => {
 					onChange={handleOption5}
 				/>
 			</label>
-			<label>
+			<label className="option">
 				Option 6:
 				<input
 					type="text"
@@ -168,7 +168,7 @@ const CreateSurveyQuestion = (props) => {
 					onChange={handleOption6}
 				/>
 			</label>
-			<label>
+			<label className="option">
 				Would you like to include an other field?
 				<select
 					type="text"
