@@ -6,19 +6,7 @@ const CreateSurveyQuestion = (props) => {
 	const { index, passData } = props;
 
 	// setting initial single question state
-	const [question, setQuestion] = useState({
-		text: "",
-		question_type_id: 2,
-		question_order: index + 1,
-		option_1: "",
-		option_2: "",
-		option_3: "",
-		option_4: "",
-		option_5: "",
-		option_6: "",
-		other: false,
-		img_url: "",
-	});
+	const [question, setQuestion] = useState({});
 
 	// setting individual field states
 	const [text, setText] = useState("");
@@ -33,56 +21,6 @@ const CreateSurveyQuestion = (props) => {
 	const [imgUrl, setImgUrl] = useState("");
 
 	// setting individual field handlers
-	const handleText = (event) => {
-		setText(event.target.value);
-		changeQuestion();
-	};
-
-	const handleTypeId = (event) => {
-		setTypeId(event.target.value);
-		changeQuestion();
-	};
-
-	const handleOption1 = (event) => {
-		setOption1(event.target.value);
-		changeQuestion();
-	};
-
-	const handleOption2 = (event) => {
-		setOption2(event.target.value);
-		changeQuestion();
-	};
-
-	const handleOption3 = (event) => {
-		setOption3(event.target.value);
-		changeQuestion();
-	};
-
-	const handleOption4 = (event) => {
-		setOption4(event.target.value);
-		changeQuestion();
-	};
-
-	const handleOption5 = (event) => {
-		setOption5(event.target.value);
-		changeQuestion();
-	};
-
-	const handleOption6 = (event) => {
-		setOption6(event.target.value);
-		changeQuestion();
-	};
-
-	const handleOther = (event) => {
-		setOther(event.target.value);
-		changeQuestion();
-	};
-
-	const handleImgUrl = (event) => {
-		setImgUrl(event.target.value);
-		changeQuestion();
-	};
-
 	const changeQuestion = () => {
 		setQuestion({
 			text: text,
@@ -98,6 +36,61 @@ const CreateSurveyQuestion = (props) => {
 			img_url: imgUrl,
 		});
 	};
+
+	const handleText = (event) => {
+		setText(event.target.value);
+	};
+
+	const handleTypeId = (event) => {
+		setTypeId(event.target.value);
+	};
+
+	const handleOption1 = (event) => {
+		setOption1(event.target.value);
+	};
+
+	const handleOption2 = (event) => {
+		setOption2(event.target.value);
+	};
+
+	const handleOption3 = (event) => {
+		setOption3(event.target.value);
+	};
+
+	const handleOption4 = (event) => {
+		setOption4(event.target.value);
+	};
+
+	const handleOption5 = (event) => {
+		setOption5(event.target.value);
+	};
+
+	const handleOption6 = (event) => {
+		setOption6(event.target.value);
+	};
+
+	const handleOther = (event) => {
+		setOther(event.target.value);
+	};
+
+	const handleImgUrl = (event) => {
+		setImgUrl(event.target.value);
+	};
+
+	useEffect(() => {
+		changeQuestion();
+	}, [
+		text,
+		typeId,
+		option1,
+		option2,
+		option3,
+		option4,
+		option5,
+		option6,
+		other,
+		imgUrl,
+	]);
 
 	useEffect(() => {
 		passData(index, question);
@@ -120,7 +113,7 @@ const CreateSurveyQuestion = (props) => {
 			</label>
 			<label>
 				Question type:
-				<select defaultValue="2">
+				<select defaultValue="2" onChange={handleTypeId}>
 					<option value="1">Boolean (True/False)</option>
 					<option value="2">Single-choice</option>
 					<option value="3">Multiple-choice</option>

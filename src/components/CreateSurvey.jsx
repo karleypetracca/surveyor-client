@@ -141,7 +141,6 @@ const CreateSurvey = () => {
 				user_id: "0",
 			};
 			const response = await postAPI(url, data);
-			console.log(data);
 			if (response.status !== 200) {
 				alert("Response was unable to be logged. Please try again later.");
 			}
@@ -152,7 +151,7 @@ const CreateSurvey = () => {
 			const url = "http://localhost:8100/api/survey/addsurveyquestions";
 			const response = await postAPI(url, data);
 			if (response.status === 200) {
-				history.push("/");
+				history.push(`/createsurvey/complete/${survey_id.survey_id}`);
 			}
 			if (response.status !== 200) {
 				alert("Response was unable to be logged. Please try again later.");
@@ -160,14 +159,12 @@ const CreateSurvey = () => {
 		};
 
 		const survey_id = await addSurvey();
-		console.log("Survey: ", surveyObject);
-		console.log("ID: ", survey_id.survey_id);
-		surveyObject.map((element) => {
+		surveyObject.map((element) =>
 			addSurveyQuestions({
 				survey_id: survey_id.survey_id,
 				...element,
-			});
-		});
+			})
+		);
 	};
 
 	return (

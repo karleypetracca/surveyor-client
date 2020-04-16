@@ -4,16 +4,7 @@ const SingleQuestion = (props) => {
 	const { detail, passData } = props;
 
 	// setting initial single question state
-	const [responseObject, setResponseObject] = useState({
-		question_id: detail.question_id,
-		option_1: false,
-		option_2: false,
-		option_3: false,
-		option_4: false,
-		option_5: false,
-		option_6: false,
-		other: "",
-	});
+	const [responseObject, setResponseObject] = useState({});
 
 	// passing data to parent when option is changed
 	useEffect(() => {
@@ -125,12 +116,7 @@ const SingleQuestion = (props) => {
 			<div className="options">
 				{!!detail.option_1 ? (
 					<label>
-						<input
-							type="radio"
-							name={detail.text}
-							onChange={handleOption1}
-							data-testid="radio1"
-						/>
+						<input type="radio" name={detail.text} onChange={handleOption1} />
 						{detail.option_1}
 					</label>
 				) : (
@@ -138,12 +124,7 @@ const SingleQuestion = (props) => {
 				)}
 				{!!detail.option_2 ? (
 					<label>
-						<input
-							type="radio"
-							name={detail.text}
-							onChange={handleOption2}
-							data-testid="radio2"
-						/>
+						<input type="radio" name={detail.text} onChange={handleOption2} />
 						{detail.option_2}
 					</label>
 				) : (
@@ -151,12 +132,7 @@ const SingleQuestion = (props) => {
 				)}
 				{!!detail.option_3 ? (
 					<label>
-						<input
-							type="radio"
-							name={detail.text}
-							onChange={handleOption3}
-							data-testid="radio3"
-						/>
+						<input type="radio" name={detail.text} onChange={handleOption3} />
 						{detail.option_3}
 					</label>
 				) : (
@@ -164,12 +140,7 @@ const SingleQuestion = (props) => {
 				)}
 				{!!detail.option_4 ? (
 					<label>
-						<input
-							type="radio"
-							name={detail.text}
-							onChange={handleOption4}
-							data-testid="radio4"
-						/>
+						<input type="radio" name={detail.text} onChange={handleOption4} />
 						{detail.option_4}
 					</label>
 				) : (
@@ -177,12 +148,7 @@ const SingleQuestion = (props) => {
 				)}
 				{!!detail.option_5 ? (
 					<label>
-						<input
-							type="radio"
-							name={detail.text}
-							onChange={handleOption5}
-							data-testid="radio5"
-						/>
+						<input type="radio" name={detail.text} onChange={handleOption5} />
 						{detail.option_5}
 					</label>
 				) : (
@@ -190,12 +156,7 @@ const SingleQuestion = (props) => {
 				)}
 				{!!detail.option_6 ? (
 					<label>
-						<input
-							type="radio"
-							name={detail.text}
-							onChange={handleOption6}
-							data-testid="radio6"
-						/>
+						<input type="radio" name={detail.text} onChange={handleOption6} />
 						{detail.option_6}
 					</label>
 				) : (
@@ -208,7 +169,6 @@ const SingleQuestion = (props) => {
 							type="text"
 							onChange={handleOtherText}
 							value={responseObject.other}
-							data-testid="other"
 						/>
 					</label>
 				) : (

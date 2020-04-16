@@ -64,7 +64,10 @@ const About = () => {
 			<HeroStyled>
 				<h2>More on the author:</h2>
 
-				<img src="https://avatars2.githubusercontent.com/u/39736230?s=460&u=4782f77b8eb8704e299b05cc48c8847fcb51d06b&v=4" />
+				<img
+					src="https://avatars2.githubusercontent.com/u/39736230?s=460&u=4782f77b8eb8704e299b05cc48c8847fcb51d06b&v=4"
+					alt="author"
+				/>
 				<h3>Karley Petracca</h3>
 				<div className="buttons">
 					<a href="https://www.karleypetracca.com">

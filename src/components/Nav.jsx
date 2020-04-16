@@ -10,7 +10,7 @@ const NavStyled = styled.div`
 	background-color: var(--primary);
 	min-height: var(--nav - height);
 	color: var(--white);
-	font-size: 24px;
+	font-size: 22px;
 	box-shadow: 0 0 4px var(--grey);
 	position: sticky;
 	top: 0;

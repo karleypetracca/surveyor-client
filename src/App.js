@@ -5,7 +5,9 @@ import Nav from "./components/Nav";
 import Home from "./components/Home";
 import About from "./components/About";
 import CreateSurvey from "./components/CreateSurvey";
+import CreateSurveyComplete from "./components/CreateSurveyComplete";
 import TakeSurvey from "./components/TakeSurvey";
+import Dashboard from "./components/Dashboard";
 
 import styled from "styled-components";
 
@@ -30,7 +32,13 @@ function App() {
 					<Route path="/" exact component={Home} />
 					<Route path="/about" exact component={About} />
 					<Route path="/createsurvey" exact component={CreateSurvey} />
+					<Route
+						path="/createsurvey/complete/:survey_id?"
+						exact
+						component={CreateSurveyComplete}
+					/>
 					<Route path="/takesurvey/:survey_id?" exact component={TakeSurvey} />
+					<Route path="/dashboard/:survey_id?" exact component={Dashboard} />
 				</Router>
 			</div>
 		</AppStyled>

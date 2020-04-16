@@ -73,12 +73,13 @@ const Survey = (props) => {
 		};
 
 		const response_id = await addResponse();
-		response.map((element) => {
+
+		response.map((element) =>
 			addResponseQuestions({
 				response_id: response_id.response_id,
 				...element,
-			});
-		});
+			})
+		);
 	};
 
 	// children mapping based on questions in survey
