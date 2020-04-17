@@ -35,7 +35,7 @@ const CompleteStyled = styled.div`
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		max-width: var(--sm-container);
+		max-width: var(--lg-container);
 	}
 
 	.clipboard {

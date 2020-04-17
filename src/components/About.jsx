@@ -80,12 +80,14 @@ const About = () => {
 					<a
 						href="https://github.com/karleypetracca/surveyor-client"
 						target="_blank"
+						rel="noopener noreferrer"
 					>
 						<button className="green">Frontend Client</button>
 					</a>
 					<a
 						href="https://github.com/karleypetracca/surveyor-api"
 						target="_blank"
+						rel="noopener noreferrer"
 					>
 						<button className="grey">Backend API</button>
 					</a>
@@ -101,13 +103,25 @@ const About = () => {
 				/>
 				<h3>Karley Petracca</h3>
 				<div className="buttons">
-					<a href="https://www.karleypetracca.com" target="_blank">
+					<a
+						href="https://www.karleypetracca.com"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<button className="blue">Portfolio</button>
 					</a>
-					<a href="https://github.com/karleypetracca" target="_blank">
+					<a
+						href="https://github.com/karleypetracca"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<button className="blue">GitHub</button>
 					</a>
-					<a href="https://www.linkedin.com/in/karleypetracca/" target="_blank">
+					<a
+						href="https://www.linkedin.com/in/karleypetracca/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						<button className="blue">LinkedIn</button>
 					</a>
 				</div>

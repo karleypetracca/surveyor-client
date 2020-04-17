@@ -155,7 +155,7 @@ const CreateSurvey = () => {
 
 		const addSurveyQuestions = async (data) => {
 			const url =
-				"http://surveyor-api.karleypetracca.com/api/survey/addsurveyquestions";
+				"https://surveyor-api.karleypetracca.com/api/survey/addsurveyquestions";
 			const response = await postAPI(url, data);
 			if (response.status === 200) {
 				history.push(`/createsurvey/complete/${survey_id.survey_id}`);
