@@ -1,4 +1,5 @@
 import React from "react";
+import mockup from "../Surveyor-CreateSurvey-iphone8spacegrey_portrait.png";
 
 import styled from "styled-components";
 
@@ -58,6 +59,7 @@ const Home = () => {
 				</a>
 			</HeroStyled>
 			<BodyStyled>
+				<img src={mockup} alt="mockup" />
 				<p>Want to see an example first? Check out our sample Survey:</p>
 				<a href="/takesurvey/492338">
 					<button className="blue">View Sample</button>

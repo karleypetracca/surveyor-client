@@ -1,5 +1,5 @@
 import React from "react";
-import icon from "../android-chrome-512x512-nav-icon2.png";
+import icon from "../nav-icon-thin.png";
 
 import styled from "styled-components";
 
