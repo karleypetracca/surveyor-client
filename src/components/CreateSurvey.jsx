@@ -61,6 +61,7 @@ const CreateSurveyStyled = styled.div`
 	img {
 		width: 100%;
 		max-width: 400px;
+		border-radius: 4px;
 	}
 `;
 
