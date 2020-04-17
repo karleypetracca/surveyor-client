@@ -69,6 +69,7 @@ const About = () => {
 					</a>
 				</div>
 			</HeroStyled>
+
 			<HeroStyled>
 				<h2>More on the author:</h2>
 
