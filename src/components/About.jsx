@@ -48,7 +48,7 @@ const About = () => {
 					(PostgreSQL, Express.js, React, Node.js). It is powered by a React
 					frontend and a backend API server running via Express. Project goal
 					was to create a survey app allowing for surveys to be quickly deployed
-					and shared with no paperwork, similar to SnapChat.
+					and shared with no login necessary.
 				</p>
 				<p>
 					To see more about the code and site structure, click the link below
