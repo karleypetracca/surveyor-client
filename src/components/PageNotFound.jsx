@@ -27,7 +27,7 @@ const PageStyled = styled.div`
 const PageNotFound = () => {
 	return (
 		<PageStyled>
-			<img src={img404} />
+			<img src={img404} alt="404" />
 			<h1>404: Page not found!</h1>
 
 			<p style={{ textAlign: "center" }}>
