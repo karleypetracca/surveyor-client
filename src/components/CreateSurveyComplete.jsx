@@ -84,6 +84,10 @@ const CompleteStyled = styled.div`
 			}
 		}
 	}
+
+	span {
+		min-height: 30px;
+	}
 `;
 
 const CreateSurveyComplete = (props) => {
@@ -139,7 +143,7 @@ const CreateSurveyComplete = (props) => {
 					{!!copiedSurvey ? (
 						<span className="copied-alert fade">Copied!</span>
 					) : (
-						<span></span>
+						<span> </span>
 					)}
 				</p>
 			</div>
@@ -166,7 +170,7 @@ const CreateSurveyComplete = (props) => {
 					{!!copiedDashboard ? (
 						<span className="copied-alert fade">Copied!</span>
 					) : (
-						<span></span>
+						<span> </span>
 					)}
 				</p>
 			</div>
