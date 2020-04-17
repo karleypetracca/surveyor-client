@@ -1,5 +1,5 @@
 import React from "react";
-import icon from "../nav-icon-thin.png";
+import icon from "../images/nav-icon-thin.png";
 
 import styled from "styled-components";
 

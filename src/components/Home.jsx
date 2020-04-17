@@ -1,7 +1,7 @@
 import React from "react";
 
-import icon from "../nav-icon.png";
-import mockup from "../Surveyor-CreateSurvey-iphone8spacegrey-portrait.png";
+import icon from "../images/nav-icon.png";
+import mockup from "../images/Surveyor-CreateSurvey-iphone8spacegrey-portrait.png";
 
 import styled from "styled-components";
 
