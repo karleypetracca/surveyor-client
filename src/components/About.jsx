@@ -38,6 +38,28 @@ const HeroStyled = styled.div`
 	}
 `;
 
+const AuthorStyled = styled.div`
+	margin: 20px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	box-shadow: 2px 8px 8px 2px var(--grey-light);
+	border-radius: 4px;
+	padding: 20px;
+	width: 100%;
+	max-width: var(--sm-container);
+
+	* {
+		margin: 10px 0;
+	}
+
+	h3 {
+		font-size: 24px;
+		font-weight: bold;
+	}
+`;
+
 const About = () => {
 	return (
 		<AboutStyled>
@@ -70,7 +92,7 @@ const About = () => {
 				</div>
 			</HeroStyled>
 
-			<HeroStyled>
+			<AuthorStyled>
 				<h2>More on the author:</h2>
 
 				<img
@@ -89,7 +111,7 @@ const About = () => {
 						<button className="blue">LinkedIn</button>
 					</a>
 				</div>
-			</HeroStyled>
+			</AuthorStyled>
 		</AboutStyled>
 	);
 };
