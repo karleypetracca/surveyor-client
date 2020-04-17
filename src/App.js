@@ -51,8 +51,8 @@ function App() {
 							component={TakeSurvey}
 						/>
 						<Route path="/dashboard/:survey_id?" exact component={Dashboard} />
-						<Route path="/404" component={PageNotFound} />
-						<Redirect to="/404" />
+						{/* <Route path="/404" component={PageNotFound} /> */}
+						{/* <Redirect to="/404" /> */}
 					</Switch>
 				</Router>
 			</div>
