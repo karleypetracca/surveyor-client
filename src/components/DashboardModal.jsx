@@ -44,6 +44,7 @@ const DashboardModalStyled = styled.div`
 	h2 {
 		font-size: 20px;
 		text-align: center;
+		padding: 10px 0;
 	}
 
 	button {
@@ -83,48 +84,48 @@ const DashboardModal = (props) => {
 						</p>
 						{!!detail.option_1 ? (
 							<p>
-								{(aggResponses.option_1_true / surveyCount) * 100}% -{" "}
-								{detail.option_1}
+								{((aggResponses.option_1_true / surveyCount) * 100).toFixed(1)}%
+								- {detail.option_1}
 							</p>
 						) : (
 							""
 						)}
 						{!!detail.option_2 ? (
 							<p>
-								{(aggResponses.option_2_true / surveyCount) * 100}% -{" "}
-								{detail.option_2}
+								{((aggResponses.option_2_true / surveyCount) * 100).toFixed(1)}%
+								- {detail.option_2}
 							</p>
 						) : (
 							""
 						)}
 						{!!detail.option_3 ? (
 							<p>
-								{(aggResponses.option_3_true / surveyCount) * 100}% -{" "}
-								{detail.option_3}
+								{((aggResponses.option_3_true / surveyCount) * 100).toFixed(1)}%
+								- {detail.option_3}
 							</p>
 						) : (
 							""
 						)}
 						{!!detail.option_4 ? (
 							<p>
-								{(aggResponses.option_4_true / surveyCount) * 100}% -{" "}
-								{detail.option_4}
+								{((aggResponses.option_4_true / surveyCount) * 100).toFixed(1)}%
+								- {detail.option_4}
 							</p>
 						) : (
 							""
 						)}
 						{!!detail.option_5 ? (
 							<p>
-								{(aggResponses.option_5_true / surveyCount) * 100}% -{" "}
-								{detail.option_5}
+								{((aggResponses.option_5_true / surveyCount) * 100).toFixed(1)}%
+								- {detail.option_5}
 							</p>
 						) : (
 							""
 						)}
 						{!!detail.option_6 ? (
 							<p>
-								{(aggResponses.option_2_true / surveyCount) * 100}% -{" "}
-								{detail.option_6}
+								{((aggResponses.option_2_true / surveyCount) * 100).toFixed(1)}%
+								- {detail.option_6}
 							</p>
 						) : (
 							""
