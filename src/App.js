@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Redirect,
+} from "react-router-dom";
 
 import Nav from "./components/Nav";
 import Home from "./components/Home";
@@ -46,7 +51,8 @@ function App() {
 							component={TakeSurvey}
 						/>
 						<Route path="/dashboard/:survey_id?" exact component={Dashboard} />
-						<Route path="*" component={PageNotFound} />
+						<Route path="/404" component={PageNotFound} />
+						<Redirect to="/404" />
 					</Switch>
 				</Router>
 			</div>
