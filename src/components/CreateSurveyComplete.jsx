@@ -69,6 +69,21 @@ const CompleteStyled = styled.div`
 		font-weight: bold;
 		font-size: 12px;
 	}
+
+	.fade {
+		animation: fadeOut ease 6s;
+		animation-fill-mode: forwards;
+
+		@keyframes fadeOut {
+			0% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0;
+				color: var(--white);
+			}
+		}
+	}
 `;
 
 const CreateSurveyComplete = (props) => {
@@ -85,6 +100,20 @@ const CreateSurveyComplete = (props) => {
 		setDashboardLink(dashboard);
 	}, [props.match.params]);
 
+	const handleCopiedSurvey = () => {
+		setCopiedSurvey(true);
+		setTimeout(function () {
+			setCopiedSurvey(false);
+		}, 7000);
+	};
+
+	const handleCopiedDashboard = () => {
+		setCopiedDashboard(true);
+		setTimeout(function () {
+			setCopiedDashboard(false);
+		}, 7000);
+	};
+
 	return (
 		<CompleteStyled>
 			<h1>Your survey has been created!</h1>
@@ -95,33 +124,37 @@ const CreateSurveyComplete = (props) => {
 
 			<div className="survey">
 				<p>Share this link to have people take your survey: </p>
-				<a href={surveyLink}>
+				<a href={surveyLink} target="_blank" rel="noopener noreferrer">
 					<b className="green">{surveyLink}</b>
 				</a>
 				<p className="clipboard">
-					Click to copy:
+					Click below to copy:
 					<CopyToClipboard
 						className="copy"
 						text={surveyLink}
-						onCopy={() => setCopiedSurvey(true)}
+						onCopy={handleCopiedSurvey}
 					>
 						<input className="green" type="text" value={surveyLink} readOnly />
 					</CopyToClipboard>
-					{!!copiedSurvey ? <span className="copied-alert">Copied!</span> : ""}
+					{!!copiedSurvey ? (
+						<span className="copied-alert fade">Copied!</span>
+					) : (
+						<span></span>
+					)}
 				</p>
 			</div>
 
 			<div className="dashboard">
 				<p>To see results, view at: </p>
-				<a href={dashboardLink}>
+				<a href={dashboardLink} target="_blank" rel="noopener noreferrer">
 					<b className="blue">{dashboardLink}</b>
 				</a>
 				<p className="clipboard">
-					Click to copy:
+					Click below to copy:
 					<CopyToClipboard
 						className="copy"
 						text={dashboardLink}
-						onCopy={() => setCopiedDashboard(true)}
+						onCopy={handleCopiedDashboard}
 					>
 						<input
 							className="blue"
@@ -131,9 +164,9 @@ const CreateSurveyComplete = (props) => {
 						/>
 					</CopyToClipboard>
 					{!!copiedDashboard ? (
-						<span className="copied-alert">Copied!</span>
+						<span className="copied-alert fade">Copied!</span>
 					) : (
-						""
+						<span></span>
 					)}
 				</p>
 			</div>
