@@ -57,6 +57,11 @@ const CreateSurveyStyled = styled.div`
 	.question .small-text {
 		font-size: 12px;
 	}
+
+	img {
+		width: 100%;
+		max-width: 400px;
+	}
 `;
 
 const CreateSurvey = () => {
