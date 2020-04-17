@@ -12,7 +12,7 @@ import Dashboard from "./components/Dashboard";
 import styled from "styled-components";
 
 const AppStyled = styled.div`
-	width: 100vw;
+	width: calc(100vw - (100vw - 100%));
 
 	.main {
 		min-height: 90vh;

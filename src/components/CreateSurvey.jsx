@@ -51,8 +51,7 @@ const CreateSurveyStyled = styled.div`
 	.question .header {
 		font-weight: bold;
 		text-align: left;
-		padding-left: 5px;
-		color: var(--secondary);
+		padding: 5px;
 	}
 
 	.question .small-text {

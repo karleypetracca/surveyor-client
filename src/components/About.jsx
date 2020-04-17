@@ -8,9 +8,11 @@ const AboutStyled = styled.div`
 	align-items: center;
 	min-height: 90vh;
 	text-align: center;
+	padding: 10px;
 
 	img {
 		border-radius: 4px;
+		max-width: 200px;
 	}
 
 	.buttons {
@@ -53,10 +55,16 @@ const About = () => {
 					for the GitHub repo.
 				</p>
 				<div className="buttons">
-					<a href="https://github.com/karleypetracca/surveyor-client">
+					<a
+						href="https://github.com/karleypetracca/surveyor-client"
+						target="_blank"
+					>
 						<button className="green">Frontend Client</button>
 					</a>
-					<a href="https://github.com/karleypetracca/surveyor-api">
+					<a
+						href="https://github.com/karleypetracca/surveyor-api"
+						target="_blank"
+					>
 						<button className="grey">Backend API</button>
 					</a>
 				</div>
@@ -70,13 +78,13 @@ const About = () => {
 				/>
 				<h3>Karley Petracca</h3>
 				<div className="buttons">
-					<a href="https://www.karleypetracca.com">
+					<a href="https://www.karleypetracca.com" target="_blank">
 						<button className="blue">Portfolio</button>
 					</a>
-					<a href="https://github.com/karleypetracca">
+					<a href="https://github.com/karleypetracca" target="_blank">
 						<button className="blue">GitHub</button>
 					</a>
-					<a href="https://www.linkedin.com/in/karleypetracca/">
+					<a href="https://www.linkedin.com/in/karleypetracca/" target="_blank">
 						<button className="blue">LinkedIn</button>
 					</a>
 				</div>

@@ -1,5 +1,7 @@
 import React from "react";
-import mockup from "../Surveyor-CreateSurvey-iphone8spacegrey_portrait.png";
+
+import icon from "../nav-icon-thin.png";
+import mockup from "../Surveyor-CreateSurvey-iphone8spacegrey-portrait.png";
 
 import styled from "styled-components";
 
@@ -29,6 +31,12 @@ const HeroStyled = styled.div`
 		margin: 50px 0;
 	}
 
+	h1 em {
+		color: var(--primary);
+		font-style: normal;
+		font-size: 35px;
+	}
+
 	h2 {
 		font-weight: normal;
 	}
@@ -37,11 +45,26 @@ const HeroStyled = styled.div`
 const BodyStyled = styled.div`
 	margin: 20px 0;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
 	max-width: var(--lg-container);
 	width: 100%;
+
+	.sample {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+	}
+
+	h3 {
+		margin: 10px 0;
+		font-weight: normal;
+	}
+
+	img {
+		max-width: 40%;
+	}
 
 	button {
 		margin: 10px;
@@ -52,18 +75,23 @@ const Home = () => {
 	return (
 		<HomeStyled>
 			<HeroStyled>
-				<h1>Welcome to Surveyor</h1>
-				<h2>Make a survey. No logins or signup forms. It's that simple.</h2>
+				<h1>
+					Welcome to <em>Surveyor</em>
+				</h1>
+				<h2>Create a survey. No logins or signup forms. It's that simple.</h2>
 				<a href="/createsurvey">
 					<button className="green">Create a Survey</button>
 				</a>
 			</HeroStyled>
 			<BodyStyled>
 				<img src={mockup} alt="mockup" />
-				<p>Want to see an example first? Check out our sample Survey:</p>
-				<a href="/takesurvey/492338">
-					<button className="blue">View Sample</button>
-				</a>
+				<div className="sample">
+					<h3>Want to see an example before creating your own?</h3>
+					<h3>Check out our sample survey:</h3>
+					<a href="/takesurvey/492338">
+						<button className="blue">View Sample</button>
+					</a>
+				</div>
 			</BodyStyled>
 		</HomeStyled>
 	);
