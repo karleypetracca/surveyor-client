@@ -44,6 +44,7 @@ const DashboardQuestion = (props) => {
 				option_4_true: o4,
 				option_5_true: o5,
 				option_6_true: o6,
+				other: other,
 			});
 		};
 

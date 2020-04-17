@@ -58,10 +58,13 @@ const DashboardModal = (props) => {
 
 	const closeHandler = () => {
 		setShowModal(!showModal);
+		console.log(aggResponses);
 	};
 
 	const handleClick = (event) => {
 		if (modal.current.contains(event.target)) {
+			console.log(aggResponses);
+
 			return;
 		} else {
 			setShowModal(false);
@@ -131,14 +134,17 @@ const DashboardModal = (props) => {
 							""
 						)}
 						{!!detail.other ? (
-							<p>
-								{detail.option_6}:
+							<>
+								<br />
+								<p>
+									<b>Other reponses:</b>
+								</p>
 								<ul>
-									{aggResponses.other.map((element) => (
-										<li>{element}</li>
+									{aggResponses.other.map((element, index) => (
+										<li key={index}>{element}</li>
 									))}
 								</ul>
-							</p>
+							</>
 						) : (
 							""
 						)}
