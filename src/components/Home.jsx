@@ -1,6 +1,6 @@
 import React from "react";
 
-import icon from "../nav-icon-thin.png";
+import icon from "../nav-icon.png";
 import mockup from "../Surveyor-CreateSurvey-iphone8spacegrey-portrait.png";
 
 import styled from "styled-components";
@@ -29,12 +29,23 @@ const HeroStyled = styled.div`
 
 	h1 {
 		margin: 50px 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
 	}
 
-	h1 em {
+	img {
+		max-height: 80px;
+		margin-right: -10px;
+	}
+
+	em {
 		color: var(--primary);
 		font-style: normal;
 		font-size: 35px;
+		display: flex;
+		align-items: center;
 	}
 
 	h2 {
@@ -76,7 +87,11 @@ const Home = () => {
 		<HomeStyled>
 			<HeroStyled>
 				<h1>
-					Welcome to <em>Surveyor</em>
+					Welcome to
+					<em>
+						<img src={icon} alt="site icon" />
+						urveyor
+					</em>
 				</h1>
 				<h2>Create a survey. No logins or signup forms. It's that simple.</h2>
 				<a href="/createsurvey">
