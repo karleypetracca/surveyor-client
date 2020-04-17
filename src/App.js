@@ -36,24 +36,18 @@ function App() {
 			<Nav />
 			<div className="main">
 				<Router>
-					<Switch>
-						<Route path="/" exact component={Home} />
-						<Route path="/about" exact component={About} />
-						<Route path="/createsurvey" exact component={CreateSurvey} />
-						<Route
-							path="/createsurvey/complete/:survey_id?"
-							exact
-							component={CreateSurveyComplete}
-						/>
-						<Route
-							path="/takesurvey/:survey_id?"
-							exact
-							component={TakeSurvey}
-						/>
-						<Route path="/dashboard/:survey_id?" exact component={Dashboard} />
-						{/* <Route path="/404" component={PageNotFound} /> */}
-						{/* <Redirect to="/404" /> */}
-					</Switch>
+					<Route path="/" exact component={Home} />
+					<Route path="/about" exact component={About} />
+					<Route path="/createsurvey" exact component={CreateSurvey} />
+					<Route
+						path="/createsurvey/complete/:survey_id?"
+						exact
+						component={CreateSurveyComplete}
+					/>
+					<Route path="/takesurvey/:survey_id?" exact component={TakeSurvey} />
+					<Route path="/dashboard/:survey_id?" exact component={Dashboard} />
+					{/* <Route path="/404" component={PageNotFound} /> */}
+					{/* <Redirect to="/404" /> */}
 				</Router>
 			</div>
 		</AppStyled>
