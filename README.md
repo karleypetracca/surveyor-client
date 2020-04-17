@@ -66,6 +66,7 @@ $ npm start
 
 - [Site logo](https://favicon.io/)
 - [Mobile Mock-up](https://mockuphone.com/#ios)
+- [404 sticky note](https://pixabay.com/photos/oops-surprise-sticky-note-pink-1444975/)
 
 ## Authors:
 
